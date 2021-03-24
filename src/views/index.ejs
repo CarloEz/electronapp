@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>STORE</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body style="background: white;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DPI</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% niveles.forEach(function(nivel){ %>
+                <tr>
+                    <td>
+                        <%= nivel.dpi %>
+                    </td>
+                    <td>
+                        <%= nivel.nombres %>
+                    </td>
+                    <td>
+                        <%= nivel.apellidos %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <a href="/home">HOME</a>
+    <button id="btn">Imprimir</button>
+</body>
+
+<script src="./public/jquery.js"></script>
+
+<script>
+    $('#btn').click(() => {
+        console.log("Imprimiendo :V");
+        window.print();
+        return false;
+    })
+</script>
+
+</html>
